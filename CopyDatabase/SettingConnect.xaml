@@ -1,0 +1,52 @@
+﻿<Window x:Class="CopyDatabase.SettingConnect"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Connect" Width="350" SizeToContent="Height" WindowStartupLocation="CenterOwner" ShowInTaskbar="False" ResizeMode="NoResize"
+        >
+
+    <StackPanel Margin="10">
+        <GroupBox Header="Fonte de dados de ORIGEM" Padding="5">
+            <StackPanel>
+                <TextBlock Text="Instância"/>
+                <TextBox x:Name="txtInstancia" Text="(localhost)"/>
+                <TextBlock Text="Database"/>
+                <TextBox x:Name="txtDatabase"/>
+
+                <GroupBox Padding="0,5,0,5" Margin="0,10,0,0">
+                    <GroupBox.Header>
+                        <CheckBox x:Name="chk" Content="Autenticação"/>
+                    </GroupBox.Header>
+                    <StackPanel IsEnabled="{Binding ElementName=chk, Path=IsChecked}">
+                        <TextBlock Text="User"/>
+                        <TextBox x:Name="txtUser" Text="sa"/>
+
+                        <TextBlock Text="Password"/>
+                        <PasswordBox x:Name="txtPwd"/>
+                    </StackPanel>
+                </GroupBox>
+            </StackPanel>
+        </GroupBox>
+        <GroupBox Header="Fonte de dados de DESTINO" Padding="5">
+            <StackPanel>
+                <TextBlock Text="Instância"/>
+                <TextBox x:Name="txtInstanciaDest" Text="(localhost)"/>
+                <TextBlock Text="Database"/>
+                <TextBox x:Name="txtDatabaseDest"/>
+
+                <GroupBox Padding="0,5,0,5" Margin="0,10,0,0">
+                    <GroupBox.Header>
+                        <CheckBox x:Name="chkDest" Content="Autenticação"/>
+                    </GroupBox.Header>
+                    <StackPanel IsEnabled="{Binding ElementName=chkDest, Path=IsChecked}">
+                        <TextBlock Text="User"/>
+                        <TextBox x:Name="txtUserDest" Text="sa"/>
+
+                        <TextBlock Text="PasswordDest"/>
+                        <PasswordBox x:Name="txtPwdDest"/>
+                    </StackPanel>
+                </GroupBox>
+            </StackPanel>
+        </GroupBox>
+        <Button Content="Connect ..." Width="Auto" Margin="0,10,0,0" Click="Button_Click_1"/>
+    </StackPanel>
+</Window>

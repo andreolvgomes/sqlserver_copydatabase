@@ -1,0 +1,124 @@
+﻿<Window x:Class="CopyDatabase.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="650" Width="500" WindowStartupLocation="CenterScreen"
+        >
+
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>            
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Margin="0,0,0,5">
+            <Button x:Name="btnConnect" Content="Connect ..." Width="250" HorizontalAlignment="Left" Click="Connect_Click"/>
+            <CheckBox x:Name="chkTransaction" Content="Para cada tabela, transferir tudo ou nada." ToolTip="" IsChecked="True" Margin="0,5,0,0" IsEnabled="False"/>
+            
+            <Separator Margin="0,5,0,0"/>            
+        </StackPanel>
+
+        <CheckBox x:Name="chkAll" Grid.Row="1" Content="Check All" Click="CheckBox_Click_1" Margin="3,0,0,0"/>
+        <ListBox x:Name="ls" Grid.Row="2" ItemsSource="{Binding Tables}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid TextBlock.FontFamily="verdana" TextBlock.FontSize="15">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="230"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Grid.Style>
+                            <Style TargetType="{x:Type Grid}">
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding IsTrans}" Value="true">
+                                        <Setter Property="TextBlock.Foreground" Value="DarkGreen"/>
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding Executing}" Value="true">
+                                        <Setter Property="TextBlock.Foreground" Value="DarkBlue"/>
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding Error}" Value="true">
+                                        <Setter Property="TextBlock.Foreground" Value="DarkRed"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Grid.Style>
+
+                        <CheckBox IsChecked="{Binding IsChecked}" VerticalAlignment="Center" Margin="0,0,2,0"/>
+                        <TextBlock Grid.Column="1">
+                            <TextBlock.Inlines>
+                                <Run Text="{Binding TABLE_NAME}"/>
+                                <Run Text="-"/>
+                                <Run Text="{Binding Row_count}"/>
+                            </TextBlock.Inlines>
+                        </TextBlock>
+
+                        <TextBlock Grid.Column="2">
+                            <TextBlock.Inlines>
+                                <Run Text="Ok"/>
+                                <Run Text=":"/>
+                                <Run Text="{Binding Percent}"/>
+                                <Run Text="%"/>
+                            </TextBlock.Inlines>
+                            <TextBlock.Style>
+                                <Style TargetType="{x:Type TextBlock}">
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding IsTrans}" Value="true">
+                                            <Setter Property="Visibility" Value="Visible"/>
+                                        </DataTrigger>
+                                        <DataTrigger Binding="{Binding IsTrans}" Value="false">
+                                            <Setter Property="Visibility" Value="Collapsed"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </TextBlock.Style>
+                        </TextBlock>
+
+                        <TextBlock Grid.Column="2">
+                            <TextBlock.Inlines>
+                                <Run Text="{Binding Count_Current}"/>
+                                <Run Text=" de "/>
+                                <Run Text="{Binding Count}"/>
+                                <Run Text=":"/>
+                                <Run Text="{Binding Percent}"/>
+                                <Run Text="%"/>
+                            </TextBlock.Inlines>
+                            <TextBlock.Style>
+                                <Style TargetType="{x:Type TextBlock}">
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding Executing}" Value="true">
+                                            <Setter Property="Visibility" Value="Visible"/>
+                                        </DataTrigger>
+                                        <DataTrigger Binding="{Binding Executing}" Value="false">
+                                            <Setter Property="Visibility" Value="Collapsed"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </TextBlock.Style>
+                        </TextBlock>
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <StackPanel Grid.Row="3" Margin="0,5,0,5">
+            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="verdana">
+                <TextBlock.Inlines>
+                    <Run Text="{Binding Current.TABLE_NAME}"/>
+                    <Run Text=": "/>
+                    <Run Text="{Binding Current.Count_Current}"/>
+                    <Run Text=" de "/>
+                    <Run Text="{Binding Current.Count}"/>
+
+                    <Run Text=":"/>
+                    <Run Text="{Binding Current.Percent}"/>
+                    <Run Text="%"/>
+                </TextBlock.Inlines>
+            </TextBlock>
+            <ProgressBar Value="{Binding Current.Percent, UpdateSourceTrigger=PropertyChanged}" Maximum="100" Height="25"/>
+        </StackPanel>
+        <Button x:Name="btn" Grid.Row="4" Content="Executa Transferência" Click="Trans" IsEnabled="False"/>
+    </Grid>
+</Window>
