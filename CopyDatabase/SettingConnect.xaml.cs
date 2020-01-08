@@ -99,16 +99,21 @@ namespace CopyDatabase
             StringBuilder sb = new StringBuilder();
             sb.Append("server=").Append(txtInstanciaDest.Text).Append(";");
             sb.AppendFormat("database={0};", this.txtDatabaseDest.Text);
-            sb.Append("connection timeout=15;");
-
-            sb.Append("user id=").Append((txtUserDest.Text.NullOrEmpty()) ? "sa" : txtUserDest.Text).Append(";");
-            sb.Append("pwd=").Append((txtPwdDest.Password.NullOrEmpty()) ? "sa" : txtPwdDest.Password).Append(";");
-
+            //sb.Append("connection timeout=15;");
+            if ((bool)this.chk.IsChecked)
+            {
+                sb.Append("user id=").Append((txtUserDest.Text.NullOrEmpty()) ? "sa" : txtUserDest.Text).Append(";");
+                sb.Append("pwd=").Append((txtPwdDest.Password.NullOrEmpty()) ? "sa" : txtPwdDest.Password).Append(";");
+            }
+            else
+            {
+                sb.Append("integrated security=sspi;");
+            }
             this.connect_to = new ConnectionDb(sb.ToString());
             this.connect_to.Open();
 
             return true;
-        }        
+        }
 
         private bool ValidConnectFrom()
         {
@@ -117,7 +122,7 @@ namespace CopyDatabase
                 MessageBox.Show("Informe a Instância", "Atenção", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return this.SelectText(txtInstancia);
             }
-            if(this.txtDatabase.Text.NullOrEmpty())
+            if (this.txtDatabase.Text.NullOrEmpty())
             {
                 MessageBox.Show("Informe o Database", "Atenção", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return this.SelectText(txtDatabase);
@@ -139,11 +144,17 @@ namespace CopyDatabase
             StringBuilder sb = new StringBuilder();
             sb.Append("server=").Append(txtInstancia.Text).Append(";");
             sb.AppendFormat("database={0};", this.txtDatabase.Text);
-            sb.Append("connection timeout=15;");
+            //sb.Append("connection timeout=15;");
 
-            sb.Append("user id=").Append((txtUser.Text.NullOrEmpty()) ? "sa" : txtUser.Text).Append(";");
-            sb.Append("pwd=").Append((txtPwd.Password.NullOrEmpty()) ? "sa" : txtPwd.Password).Append(";");
-
+            if ((bool)this.chkDest.IsChecked)
+            {
+                sb.Append("user id=").Append((txtUser.Text.NullOrEmpty()) ? "sa" : txtUser.Text).Append(";");
+                sb.Append("pwd=").Append((txtPwd.Password.NullOrEmpty()) ? "sa" : txtPwd.Password).Append(";");
+            }
+            else
+            {
+                sb.Append("integrated security=sspi;");
+            }
             this.connect_from = new ConnectionDb(sb.ToString());
             this.connect_from.Open();
 

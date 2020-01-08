@@ -71,6 +71,7 @@ namespace CopyDatabase
                 {
                     this.provider.SetCnn(cnn);
                     this.provider.LoadTables();
+                    this.provider.LoadReferences();
 
                     this.btn.IsEnabled = true;
                     this.chkTransaction.IsEnabled = true;

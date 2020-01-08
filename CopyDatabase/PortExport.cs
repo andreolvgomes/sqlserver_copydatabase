@@ -74,7 +74,6 @@ namespace CopyDatabase
 
         internal void Execute()
         {
-            Columns.SetReferences(this.Tables.Where(c => c.IsChecked).ToList(), connect_to);
             this.Trans();
             this.On_Event_Success();
         }
@@ -87,6 +86,11 @@ namespace CopyDatabase
 
             foreach (Table t in this.Tables.Where(c => c.IsChecked))
                 this.Trans1(t);
+        }
+
+        internal void LoadReferences()
+        {
+            Columns.SetReferences(this.Tables, connect_to);
         }
 
         private void Trans1(Table t)
@@ -144,7 +148,7 @@ namespace CopyDatabase
                                     {
                                         command.ExecuteNonQuery();
                                     }
-                                    catch
+                                    catch (Exception ex)
                                     {
                                         if (this.InTransaction)
                                             throw;
@@ -156,7 +160,7 @@ namespace CopyDatabase
 
                         if (command.Transaction != null)
                             command.Transaction.Commit();
-                        
+
                         Logs.Success(t_executing);
                     }
                     catch (Exception ex)
@@ -273,12 +277,33 @@ open cursor_foreach
 		end
 exec sp_close_and_deallocate_cursor 'cursor_foreach';
 select * from @tables order by TABLE_NAME");
-                this.Tables.ForEach(s => s.IsChecked = true);
+
+                foreach (Table table in this.Tables)
+                {
+                    table.IsChecked = true;
+                    table.PropertyChanged += new PropertyChangedEventHandler(OnTablePropertyChanged);
+                }
             }
             catch
             {
                 throw;
             }
+        }
+
+        private void OnTablePropertyChanged(object sender, PropertyChangedEventArgs e)
+        {
+            if (e.PropertyName == "IsChecked")
+            {
+                Table table = sender as Table;
+                if (table.IsChecked)
+                    this.IsCheckReferences(table);
+            }
+        }
+
+        private void IsCheckReferences(Table table)
+        {
+            foreach (Table references in table.References)
+                references.IsChecked = true;
         }
     }
 }

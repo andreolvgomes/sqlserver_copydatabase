@@ -1,0 +1,529 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Log Terminal="PROGRAMACAO1" UserTerminal="André">
+  <Connection DataSource=".\sql1" Database="bdsic" UserID="sa">
+    <Erro DataHora="07/01/2020 14:28:12" Versao="1.0.0.0" EXECompilado="07/01/2020 14:27:45">
+      <Funcao>Void .ctor(System.Data.ProviderBase.DbConnectionPoolIdentity, System.Data.SqlClient.SqlConnectionString, System.Data.SqlClient.SqlCredential, System.Object, System.String, System.Security.SecureString, Boolean, System.Data.SqlClient.SqlConnectionString, System.Data.SqlClient.SessionData, System.Data.ProviderBase.DbConnectionPool, System.String, Boolean, System.Data.SqlClient.SqlAuthenticationProviderManager)</Funcao>
+      <MsgErro>Falha de logon do usuário 'sa'.</MsgErro>
+      <LocalizacaoErro>   em System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, DbConnectionPool pool, String accessToken, Boolean applyTransientFaultHandling, SqlAuthenticationProviderManager sqlAuthProviderManager)
+   em System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   em System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   em System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   em System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   em System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal&amp; connection)
+   em System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal&amp; connection)
+   em System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal&amp; connection)
+   em System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   em System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   em System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   em System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   em System.Data.SqlClient.SqlConnection.Open()
+   em System.ConnectionDbAbstract.GetConnection() na f:\Desenvolvimento\Sistemas\desenvolvimento\trunk\SIC\SICCommon\Database\ConnectionDbAbstract.cs:linha 130
+   em System.ConnectionDbAbstract.Open() na f:\Desenvolvimento\Sistemas\desenvolvimento\trunk\SIC\SICCommon\Database\ConnectionDbAbstract.cs:linha 103
+   em CopyDatabase.SettingConnect.ValidConnectFrom() na F:\desenv\fontes -\CopyDatabase\CopyDatabase\SettingConnect.xaml.cs:linha 148
+   em CopyDatabase.SettingConnect.Button_Click_1(Object sender, RoutedEventArgs e) na F:\desenv\fontes -\CopyDatabase\CopyDatabase\SettingConnect.xaml.cs:linha 56</LocalizacaoErro>
+      <InnerException>InnerException Null</InnerException>
+    </Erro>
+  </Connection>
+  <Connection DataSource=".\sql1" Database="bdsic" UserID="sa">
+    <Erro DataHora="07/01/2020 14:28:18" Versao="1.0.0.0" EXECompilado="07/01/2020 14:27:45">
+      <Funcao>Void .ctor(System.Data.ProviderBase.DbConnectionPoolIdentity, System.Data.SqlClient.SqlConnectionString, System.Data.SqlClient.SqlCredential, System.Object, System.String, System.Security.SecureString, Boolean, System.Data.SqlClient.SqlConnectionString, System.Data.SqlClient.SessionData, System.Data.ProviderBase.DbConnectionPool, System.String, Boolean, System.Data.SqlClient.SqlAuthenticationProviderManager)</Funcao>
+      <MsgErro>Falha de logon do usuário 'sa'.</MsgErro>
+      <LocalizacaoErro>   em System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, DbConnectionPool pool, String accessToken, Boolean applyTransientFaultHandling, SqlAuthenticationProviderManager sqlAuthProviderManager)
+   em System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   em System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   em System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   em System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   em System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal&amp; connection)
+   em System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal&amp; connection)
+   em System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal&amp; connection)
+   em System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   em System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   em System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   em System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   em System.Data.SqlClient.SqlConnection.Open()
+   em System.ConnectionDbAbstract.GetConnection() na f:\Desenvolvimento\Sistemas\desenvolvimento\trunk\SIC\SICCommon\Database\ConnectionDbAbstract.cs:linha 130
+   em System.ConnectionDbAbstract.Open() na f:\Desenvolvimento\Sistemas\desenvolvimento\trunk\SIC\SICCommon\Database\ConnectionDbAbstract.cs:linha 103
+   em CopyDatabase.SettingConnect.ValidConnectFrom() na F:\desenv\fontes -\CopyDatabase\CopyDatabase\SettingConnect.xaml.cs:linha 148
+   em CopyDatabase.SettingConnect.Button_Click_1(Object sender, RoutedEventArgs e) na F:\desenv\fontes -\CopyDatabase\CopyDatabase\SettingConnect.xaml.cs:linha 56</LocalizacaoErro>
+      <InnerException>InnerException Null</InnerException>
+    </Erro>
+  </Connection>
+  <Transf TABLE_NAME="Clientes" Row_count="0">
+    <Erro DataHora="07/01/2020 14:30:12" Versao="1.0.0.0" EXECompilado="07/01/2020 14:27:45">
+      <Funcao>Void OnError(System.Data.SqlClient.SqlException, Boolean, System.Action`1[System.Action])</Funcao>
+      <MsgErro>A instrução INSERT conflitou com a restrição do FOREIGN KEY "FK_Clientes_Ramo_ativ". O conflito ocorreu no banco de dados "bdsic", tabela "dbo.Ramo_ativ", column 'Ram_codigo'.
+A instrução foi finalizada.</MsgErro>
+      <LocalizacaoErro>   em System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   em System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean&amp; dataReady)
+   em System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task&amp; task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task&amp; task, Boolean&amp; usedCache, Boolean asyncWrite, Boolean inRetry)
+   em System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean&amp; usedCache, Boolean asyncWrite, Boolean inRetry)
+   em System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   em CopyDatabase.PortExport.TransExec(Table t_executing)</LocalizacaoErro>
+      <InnerException>InnerException Null</InnerException>
+    </Erro>
+  </Transf>
+  <Transf TABLE_NAME="Orcamentos" Row_count="14831">
+    <Erro DataHora="07/01/2020 14:30:13" Versao="1.0.0.0" EXECompilado="07/01/2020 14:27:45">
+      <Funcao>Void OnError(System.Data.SqlClient.SqlException, Boolean, System.Action`1[System.Action])</Funcao>
+      <MsgErro>Não é possível inserir o valor NULL na coluna 'Orc_qtdivconta', tabela 'bdsic.dbo.Orcamentos'; a coluna não permite nulos. Falha em INSERT.
+A instrução foi finalizada.</MsgErro>
+      <LocalizacaoErro>   em System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   em System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean&amp; dataReady)
+   em System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task&amp; task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task&amp; task, Boolean&amp; usedCache, Boolean asyncWrite, Boolean inRetry)
+   em System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean&amp; usedCache, Boolean asyncWrite, Boolean inRetry)
+   em System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   em CopyDatabase.PortExport.TransExec(Table t_executing)</LocalizacaoErro>
+      <InnerException>InnerException Null</InnerException>
+    </Erro>
+  </Transf>
+  <Connection DataSource=".\sql1" Database="bdsic" UserID="">
+    <Erro DataHora="07/01/2020 15:04:06" Versao="1.0.0.0" EXECompilado="07/01/2020 14:58:34">
+      <Funcao>Void OnError(System.Data.SqlClient.SqlException, Boolean, System.Action`1[System.Action])</Funcao>
+      <MsgErro>Tempo Limite de Execução Expirado.  O período de tempo limite terminou antes da conclusão da operação ou o servidor não está respondendo.</MsgErro>
+      <LocalizacaoErro>   em System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   em System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean&amp; dataReady)
+   em System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   em System.Data.SqlClient.SqlDataReader.get_MetaData()
+   em System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task&amp; task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task&amp; task, Boolean&amp; usedCache, Boolean asyncWrite, Boolean inRetry)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   em System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   em System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   em System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   em System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   em System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   em System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   em System.ConnectionDbAbstract.GetDatatable(SqlCommand command, Boolean executeReader) na f:\Desenvolvimento\Sistemas\desenvolvimento\trunk\SIC\SICCommon\Database\ConnectionDbAbstract.cs:linha 461
+   em System.ConnectionDbAbstract.GetDatatable(SqlCommand command) na f:\Desenvolvimento\Sistemas\desenvolvimento\trunk\SIC\SICCommon\Database\ConnectionDbAbstract.cs:linha 431
+   em System.ConnectionDbAbstract.GetDatatable(String commandText) na f:\Desenvolvimento\Sistemas\desenvolvimento\trunk\SIC\SICCommon\Database\ConnectionDbAbstract.cs:linha 420
+   em System.ConnectionDbAbstract.&lt;GetDataRow&gt;d__0.MoveNext() na f:\Desenvolvimento\Sistemas\desenvolvimento\trunk\SIC\SICCommon\Database\ConnectionDbAbstract.cs:linha 347
+   em System.ConnectionDbAbstract.GetListModel[T](String commandText) na f:\Desenvolvimento\Sistemas\desenvolvimento\trunk\SIC\SICCommon\Database\ConnectionDbAbstract.cs:linha 823
+   em CopyDatabase.PortExport.LoadTables() na F:\desenv\fontes -\CopyDatabase\CopyDatabase\PortExport.cs:linha 289
+   em CopyDatabase.MainWindow.Connect_Click(Object sender, RoutedEventArgs e) na F:\desenv\fontes -\CopyDatabase\CopyDatabase\MainWindow.xaml.cs:linha 73</LocalizacaoErro>
+      <InnerException>O tempo limite de espera foi atingido</InnerException>
+    </Erro>
+  </Connection>
+  <Transf TABLE_NAME="Csincronia" Row_count="2">
+    <Erro DataHora="07/01/2020 15:17:39" Versao="1.0.0.0" EXECompilado="07/01/2020 14:58:34">
+      <Funcao>Void OnError(System.Data.SqlClient.SqlException, Boolean, System.Action`1[System.Action])</Funcao>
+      <MsgErro>A conversão implícita do tipo de dados nvarchar em varbinary não é permitida. Use a função CONVERT para executar essa consulta.</MsgErro>
+      <LocalizacaoErro>   em System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   em System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean&amp; dataReady)
+   em System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task&amp; task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task&amp; task, Boolean&amp; usedCache, Boolean asyncWrite, Boolean inRetry)
+   em System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean&amp; usedCache, Boolean asyncWrite, Boolean inRetry)
+   em System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   em CopyDatabase.PortExport.TransExec(Table t_executing) na F:\desenv\fontes -\CopyDatabase\CopyDatabase\PortExport.cs:linha 154</LocalizacaoErro>
+      <InnerException>InnerException Null</InnerException>
+    </Erro>
+  </Transf>
+  <Transf TABLE_NAME="Orcpagamentos" Row_count="16416">
+    <Erro DataHora="07/01/2020 15:25:04" Versao="1.0.0.0" EXECompilado="07/01/2020 14:58:34">
+      <Funcao>Void OnError(System.Data.SqlClient.SqlException, Boolean, System.Action`1[System.Action])</Funcao>
+      <MsgErro>A instrução INSERT conflitou com a restrição do FOREIGN KEY "FK_Orcpagamentos_Orcamentos". O conflito ocorreu no banco de dados "bdsic", tabela "dbo.Orcamentos", column 'Orc_nrorcam'.
+A instrução foi finalizada.</MsgErro>
+      <LocalizacaoErro>   em System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   em System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean&amp; dataReady)
+   em System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task&amp; task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task&amp; task, Boolean&amp; usedCache, Boolean asyncWrite, Boolean inRetry)
+   em System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean&amp; usedCache, Boolean asyncWrite, Boolean inRetry)
+   em System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   em CopyDatabase.PortExport.TransExec(Table t_executing) na F:\desenv\fontes -\CopyDatabase\CopyDatabase\PortExport.cs:linha 154</LocalizacaoErro>
+      <InnerException>InnerException Null</InnerException>
+    </Erro>
+  </Transf>
+  <Transf TABLE_NAME="Oritens" Row_count="65628">
+    <Erro DataHora="07/01/2020 15:29:59" Versao="1.0.0.0" EXECompilado="07/01/2020 14:58:34">
+      <Funcao>Boolean TryRun(System.Data.SqlClient.RunBehavior, System.Data.SqlClient.SqlCommand, System.Data.SqlClient.SqlDataReader, System.Data.SqlClient.BulkCopySimpleResultSet, System.Data.SqlClient.TdsParserStateObject, Boolean ByRef)</Funcao>
+      <MsgErro>Erro fatal de conexão interna. Estado do erro: 15, Token: 49</MsgErro>
+      <LocalizacaoErro>   em System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean&amp; dataReady)
+   em System.Data.SqlClient.SqlDataReader.TryCloseInternal(Boolean closeReader)
+   em System.Data.SqlClient.SqlDataReader.Close()
+   em System.Data.Common.DbDataReader.Dispose(Boolean disposing)
+   em System.Data.Common.DbDataReader.Dispose()
+   em CopyDatabase.PortExport.TransExec(Table t_executing) na F:\desenv\fontes -\CopyDatabase\CopyDatabase\PortExport.cs:linha 158</LocalizacaoErro>
+      <InnerException>InnerException Null</InnerException>
+    </Erro>
+  </Transf>
+  <Transf TABLE_NAME="Orqvendedores" Row_count="26188">
+    <Erro DataHora="07/01/2020 15:30:40" Versao="1.0.0.0" EXECompilado="07/01/2020 14:58:34">
+      <Funcao>Void OnError(System.Data.SqlClient.SqlException, Boolean, System.Action`1[System.Action])</Funcao>
+      <MsgErro>A instrução INSERT conflitou com a restrição do FOREIGN KEY "FK_Orqvendedores_Orcamentos". O conflito ocorreu no banco de dados "bdsic", tabela "dbo.Orcamentos", column 'Orc_nrorcam'.
+A instrução foi finalizada.</MsgErro>
+      <LocalizacaoErro>   em System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   em System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean&amp; dataReady)
+   em System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task&amp; task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task&amp; task, Boolean&amp; usedCache, Boolean asyncWrite, Boolean inRetry)
+   em System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean&amp; usedCache, Boolean asyncWrite, Boolean inRetry)
+   em System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   em CopyDatabase.PortExport.TransExec(Table t_executing) na F:\desenv\fontes -\CopyDatabase\CopyDatabase\PortExport.cs:linha 154</LocalizacaoErro>
+      <InnerException>InnerException Null</InnerException>
+    </Erro>
+  </Transf>
+  <Transf TABLE_NAME="Prsaldo" Row_count="11561">
+    <Erro DataHora="07/01/2020 15:33:41" Versao="1.0.0.0" EXECompilado="07/01/2020 14:58:34">
+      <Funcao>Void OnError(System.Data.SqlClient.SqlException, Boolean, System.Action`1[System.Action])</Funcao>
+      <MsgErro>A coluna "Prs_movfinal" não pode ser modificada porque é uma coluna computada ou é resultado de um operador UNION.</MsgErro>
+      <LocalizacaoErro>   em System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   em System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean&amp; dataReady)
+   em System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task&amp; task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task&amp; task, Boolean&amp; usedCache, Boolean asyncWrite, Boolean inRetry)
+   em System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean&amp; usedCache, Boolean asyncWrite, Boolean inRetry)
+   em System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   em CopyDatabase.PortExport.TransExec(Table t_executing) na F:\desenv\fontes -\CopyDatabase\CopyDatabase\PortExport.cs:linha 154</LocalizacaoErro>
+      <InnerException>InnerException Null</InnerException>
+    </Erro>
+  </Transf>
+  <Transf TABLE_NAME="Prdetalhado" Row_count="7902">
+    <Erro DataHora="07/01/2020 15:33:46" Versao="1.0.0.0" EXECompilado="07/01/2020 14:58:34">
+      <Funcao>Void OnError(System.Data.SqlClient.SqlException, Boolean, System.Action`1[System.Action])</Funcao>
+      <MsgErro>A instrução INSERT conflitou com a restrição do FOREIGN KEY "FK_Prdetalhado_Prsaldo". O conflito ocorreu no banco de dados "bdsic", tabela "dbo.Prsaldo".
+A instrução foi finalizada.</MsgErro>
+      <LocalizacaoErro>   em System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   em System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean&amp; dataReady)
+   em System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task&amp; task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task&amp; task, Boolean&amp; usedCache, Boolean asyncWrite, Boolean inRetry)
+   em System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean&amp; usedCache, Boolean asyncWrite, Boolean inRetry)
+   em System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   em CopyDatabase.PortExport.TransExec(Table t_executing) na F:\desenv\fontes -\CopyDatabase\CopyDatabase\PortExport.cs:linha 154</LocalizacaoErro>
+      <InnerException>InnerException Null</InnerException>
+    </Erro>
+  </Transf>
+  <Transf TABLE_NAME="SpedPeriodo" Row_count="1">
+    <Erro DataHora="07/01/2020 15:46:36" Versao="1.0.0.0" EXECompilado="07/01/2020 14:58:34">
+      <Funcao>Void OnError(System.Data.SqlClient.SqlException, Boolean, System.Action`1[System.Action])</Funcao>
+      <MsgErro>Sintaxe incorreta próxima a ')'.</MsgErro>
+      <LocalizacaoErro>   em System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   em System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean&amp; dataReady)
+   em System.Data.SqlClient.SqlCommand.RunExecuteNonQueryTds(String methodName, Boolean async, Int32 timeout, Boolean asyncWrite)
+   em System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean&amp; usedCache, Boolean asyncWrite, Boolean inRetry)
+   em System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   em CopyDatabase.PortExport.TransExec(Table t_executing) na F:\desenv\fontes -\CopyDatabase\CopyDatabase\PortExport.cs:linha 154</LocalizacaoErro>
+      <InnerException>InnerException Null</InnerException>
+    </Erro>
+  </Transf>
+  <Transf TABLE_NAME="TabRel890" Row_count="1">
+    <Erro DataHora="07/01/2020 15:47:56" Versao="1.0.0.0" EXECompilado="07/01/2020 14:58:34">
+      <Funcao>Void OnError(System.Data.SqlClient.SqlException, Boolean, System.Action`1[System.Action])</Funcao>
+      <MsgErro>Sintaxe incorreta próxima a ')'.</MsgErro>
+      <LocalizacaoErro>   em System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   em System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean&amp; dataReady)
+   em System.Data.SqlClient.SqlCommand.RunExecuteNonQueryTds(String methodName, Boolean async, Int32 timeout, Boolean asyncWrite)
+   em System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean&amp; usedCache, Boolean asyncWrite, Boolean inRetry)
+   em System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   em CopyDatabase.PortExport.TransExec(Table t_executing) na F:\desenv\fontes -\CopyDatabase\CopyDatabase\PortExport.cs:linha 154</LocalizacaoErro>
+      <InnerException>InnerException Null</InnerException>
+    </Erro>
+  </Transf>
+  <Transf TABLE_NAME="Valiqecf" Row_count="10">
+    <Erro DataHora="07/01/2020 15:49:52" Versao="1.0.0.0" EXECompilado="07/01/2020 14:58:34">
+      <Funcao>Void OnError(System.Data.SqlClient.SqlException, Boolean, System.Action`1[System.Action])</Funcao>
+      <MsgErro>Sintaxe incorreta próxima a ')'.</MsgErro>
+      <LocalizacaoErro>   em System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   em System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean&amp; dataReady)
+   em System.Data.SqlClient.SqlCommand.RunExecuteNonQueryTds(String methodName, Boolean async, Int32 timeout, Boolean asyncWrite)
+   em System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean&amp; usedCache, Boolean asyncWrite, Boolean inRetry)
+   em System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   em CopyDatabase.PortExport.TransExec(Table t_executing) na F:\desenv\fontes -\CopyDatabase\CopyDatabase\PortExport.cs:linha 154</LocalizacaoErro>
+      <InnerException>InnerException Null</InnerException>
+    </Erro>
+  </Transf>
+  <Transf TABLE_NAME="Zjson" Row_count="1">
+    <Erro DataHora="07/01/2020 15:52:15" Versao="1.0.0.0" EXECompilado="07/01/2020 14:58:34">
+      <Funcao>Void OnError(System.Data.SqlClient.SqlException, Boolean, System.Action`1[System.Action])</Funcao>
+      <MsgErro>Sintaxe incorreta próxima a ')'.</MsgErro>
+      <LocalizacaoErro>   em System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   em System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean&amp; dataReady)
+   em System.Data.SqlClient.SqlCommand.RunExecuteNonQueryTds(String methodName, Boolean async, Int32 timeout, Boolean asyncWrite)
+   em System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean&amp; usedCache, Boolean asyncWrite, Boolean inRetry)
+   em System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   em CopyDatabase.PortExport.TransExec(Table t_executing) na F:\desenv\fontes -\CopyDatabase\CopyDatabase\PortExport.cs:linha 154</LocalizacaoErro>
+      <InnerException>InnerException Null</InnerException>
+    </Erro>
+  </Transf>
+  <Transf TABLE_NAME="Ztabelas" Row_count="113">
+    <Erro DataHora="07/01/2020 15:52:47" Versao="1.0.0.0" EXECompilado="07/01/2020 14:58:34">
+      <Funcao>Void OnError(System.Data.SqlClient.SqlException, Boolean, System.Action`1[System.Action])</Funcao>
+      <MsgErro>Sintaxe incorreta próxima a ')'.</MsgErro>
+      <LocalizacaoErro>   em System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   em System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean&amp; dataReady)
+   em System.Data.SqlClient.SqlCommand.RunExecuteNonQueryTds(String methodName, Boolean async, Int32 timeout, Boolean asyncWrite)
+   em System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean&amp; usedCache, Boolean asyncWrite, Boolean inRetry)
+   em System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   em CopyDatabase.PortExport.TransExec(Table t_executing) na F:\desenv\fontes -\CopyDatabase\CopyDatabase\PortExport.cs:linha 154</LocalizacaoErro>
+      <InnerException>InnerException Null</InnerException>
+    </Erro>
+  </Transf>
+  <Connection DataSource=".\sql1" Database="bdsic" UserID="">
+    <Erro DataHora="07/01/2020 15:56:37" Versao="1.0.0.0" EXECompilado="07/01/2020 15:53:37">
+      <Funcao>Void OnError(System.Data.SqlClient.SqlException, Boolean, System.Action`1[System.Action])</Funcao>
+      <MsgErro>Tempo Limite de Execução Expirado.  O período de tempo limite terminou antes da conclusão da operação ou o servidor não está respondendo.</MsgErro>
+      <LocalizacaoErro>   em System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   em System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean&amp; dataReady)
+   em System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   em System.Data.SqlClient.SqlDataReader.get_MetaData()
+   em System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task&amp; task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task&amp; task, Boolean&amp; usedCache, Boolean asyncWrite, Boolean inRetry)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   em System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   em System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   em System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   em System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   em System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   em System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   em System.ConnectionDbAbstract.GetDatatable(SqlCommand command, Boolean executeReader) na f:\Desenvolvimento\Sistemas\desenvolvimento\trunk\SIC\SICCommon\Database\ConnectionDbAbstract.cs:linha 461
+   em System.ConnectionDbAbstract.GetDatatable(SqlCommand command) na f:\Desenvolvimento\Sistemas\desenvolvimento\trunk\SIC\SICCommon\Database\ConnectionDbAbstract.cs:linha 431
+   em System.ConnectionDbAbstract.GetDatatable(String commandText) na f:\Desenvolvimento\Sistemas\desenvolvimento\trunk\SIC\SICCommon\Database\ConnectionDbAbstract.cs:linha 420
+   em System.ConnectionDbAbstract.&lt;GetDataRow&gt;d__0.MoveNext() na f:\Desenvolvimento\Sistemas\desenvolvimento\trunk\SIC\SICCommon\Database\ConnectionDbAbstract.cs:linha 347
+   em System.ConnectionDbAbstract.GetListModel[T](String commandText) na f:\Desenvolvimento\Sistemas\desenvolvimento\trunk\SIC\SICCommon\Database\ConnectionDbAbstract.cs:linha 823
+   em CopyDatabase.PortExport.LoadTables() na F:\desenv\fontes -\CopyDatabase\CopyDatabase\PortExport.cs:linha 289
+   em CopyDatabase.MainWindow.Connect_Click(Object sender, RoutedEventArgs e) na F:\desenv\fontes -\CopyDatabase\CopyDatabase\MainWindow.xaml.cs:linha 73</LocalizacaoErro>
+      <InnerException>O tempo limite de espera foi atingido</InnerException>
+    </Erro>
+  </Connection>
+  <Connection DataSource=".\sql1" Database="bdsic" UserID="">
+    <Erro DataHora="07/01/2020 15:57:24" Versao="1.0.0.0" EXECompilado="07/01/2020 15:53:37">
+      <Funcao>Void OnError(System.Data.SqlClient.SqlException, Boolean, System.Action`1[System.Action])</Funcao>
+      <MsgErro>Tempo Limite de Execução Expirado.  O período de tempo limite terminou antes da conclusão da operação ou o servidor não está respondendo.</MsgErro>
+      <LocalizacaoErro>   em System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   em System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean&amp; dataReady)
+   em System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   em System.Data.SqlClient.SqlDataReader.get_MetaData()
+   em System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task&amp; task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task&amp; task, Boolean&amp; usedCache, Boolean asyncWrite, Boolean inRetry)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   em System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   em System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   em System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   em System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   em System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   em System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   em System.ConnectionDbAbstract.GetDatatable(SqlCommand command, Boolean executeReader) na f:\Desenvolvimento\Sistemas\desenvolvimento\trunk\SIC\SICCommon\Database\ConnectionDbAbstract.cs:linha 461
+   em System.ConnectionDbAbstract.GetDatatable(SqlCommand command) na f:\Desenvolvimento\Sistemas\desenvolvimento\trunk\SIC\SICCommon\Database\ConnectionDbAbstract.cs:linha 431
+   em System.ConnectionDbAbstract.GetDatatable(String commandText) na f:\Desenvolvimento\Sistemas\desenvolvimento\trunk\SIC\SICCommon\Database\ConnectionDbAbstract.cs:linha 420
+   em System.ConnectionDbAbstract.&lt;GetDataRow&gt;d__0.MoveNext() na f:\Desenvolvimento\Sistemas\desenvolvimento\trunk\SIC\SICCommon\Database\ConnectionDbAbstract.cs:linha 347
+   em System.ConnectionDbAbstract.GetListModel[T](String commandText) na f:\Desenvolvimento\Sistemas\desenvolvimento\trunk\SIC\SICCommon\Database\ConnectionDbAbstract.cs:linha 823
+   em CopyDatabase.PortExport.LoadTables() na F:\desenv\fontes -\CopyDatabase\CopyDatabase\PortExport.cs:linha 289
+   em CopyDatabase.MainWindow.Connect_Click(Object sender, RoutedEventArgs e) na F:\desenv\fontes -\CopyDatabase\CopyDatabase\MainWindow.xaml.cs:linha 73</LocalizacaoErro>
+      <InnerException>O tempo limite de espera foi atingido</InnerException>
+    </Erro>
+  </Connection>
+  <Connection DataSource=".\sql1" Database="bdsic" UserID="">
+    <Erro DataHora="07/01/2020 15:58:09" Versao="1.0.0.0" EXECompilado="07/01/2020 15:53:37">
+      <Funcao>Void OnError(System.Data.SqlClient.SqlException, Boolean, System.Action`1[System.Action])</Funcao>
+      <MsgErro>Tempo Limite de Execução Expirado.  O período de tempo limite terminou antes da conclusão da operação ou o servidor não está respondendo.</MsgErro>
+      <LocalizacaoErro>   em System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   em System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean&amp; dataReady)
+   em System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   em System.Data.SqlClient.SqlDataReader.get_MetaData()
+   em System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task&amp; task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task&amp; task, Boolean&amp; usedCache, Boolean asyncWrite, Boolean inRetry)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   em System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   em System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   em System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   em System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   em System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   em System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   em System.ConnectionDbAbstract.GetDatatable(SqlCommand command, Boolean executeReader) na f:\Desenvolvimento\Sistemas\desenvolvimento\trunk\SIC\SICCommon\Database\ConnectionDbAbstract.cs:linha 461
+   em System.ConnectionDbAbstract.GetDatatable(SqlCommand command) na f:\Desenvolvimento\Sistemas\desenvolvimento\trunk\SIC\SICCommon\Database\ConnectionDbAbstract.cs:linha 431
+   em System.ConnectionDbAbstract.GetDatatable(String commandText) na f:\Desenvolvimento\Sistemas\desenvolvimento\trunk\SIC\SICCommon\Database\ConnectionDbAbstract.cs:linha 420
+   em System.ConnectionDbAbstract.&lt;GetDataRow&gt;d__0.MoveNext() na f:\Desenvolvimento\Sistemas\desenvolvimento\trunk\SIC\SICCommon\Database\ConnectionDbAbstract.cs:linha 347
+   em System.ConnectionDbAbstract.GetListModel[T](String commandText) na f:\Desenvolvimento\Sistemas\desenvolvimento\trunk\SIC\SICCommon\Database\ConnectionDbAbstract.cs:linha 823
+   em CopyDatabase.PortExport.LoadTables() na F:\desenv\fontes -\CopyDatabase\CopyDatabase\PortExport.cs:linha 289
+   em CopyDatabase.MainWindow.Connect_Click(Object sender, RoutedEventArgs e) na F:\desenv\fontes -\CopyDatabase\CopyDatabase\MainWindow.xaml.cs:linha 73</LocalizacaoErro>
+      <InnerException>O tempo limite de espera foi atingido</InnerException>
+    </Erro>
+  </Connection>
+  <Connection DataSource=".\sql1" Database="bdsic" UserID="">
+    <Erro DataHora="07/01/2020 16:00:33" Versao="1.0.0.0" EXECompilado="07/01/2020 15:53:37">
+      <Funcao>Void OnError(System.Data.SqlClient.SqlException, Boolean, System.Action`1[System.Action])</Funcao>
+      <MsgErro>Tempo Limite de Execução Expirado.  O período de tempo limite terminou antes da conclusão da operação ou o servidor não está respondendo.</MsgErro>
+      <LocalizacaoErro>   em System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   em System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean&amp; dataReady)
+   em System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   em System.Data.SqlClient.SqlDataReader.get_MetaData()
+   em System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task&amp; task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task&amp; task, Boolean&amp; usedCache, Boolean asyncWrite, Boolean inRetry)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   em System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   em System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   em System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   em System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   em System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   em System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   em System.ConnectionDbAbstract.GetDatatable(SqlCommand command, Boolean executeReader) na f:\Desenvolvimento\Sistemas\desenvolvimento\trunk\SIC\SICCommon\Database\ConnectionDbAbstract.cs:linha 461
+   em System.ConnectionDbAbstract.GetDatatable(SqlCommand command) na f:\Desenvolvimento\Sistemas\desenvolvimento\trunk\SIC\SICCommon\Database\ConnectionDbAbstract.cs:linha 431
+   em System.ConnectionDbAbstract.GetDatatable(String commandText) na f:\Desenvolvimento\Sistemas\desenvolvimento\trunk\SIC\SICCommon\Database\ConnectionDbAbstract.cs:linha 420
+   em System.ConnectionDbAbstract.&lt;GetDataRow&gt;d__0.MoveNext() na f:\Desenvolvimento\Sistemas\desenvolvimento\trunk\SIC\SICCommon\Database\ConnectionDbAbstract.cs:linha 347
+   em System.ConnectionDbAbstract.GetListModel[T](String commandText) na f:\Desenvolvimento\Sistemas\desenvolvimento\trunk\SIC\SICCommon\Database\ConnectionDbAbstract.cs:linha 823
+   em CopyDatabase.PortExport.LoadTables() na F:\desenv\fontes -\CopyDatabase\CopyDatabase\PortExport.cs:linha 289
+   em CopyDatabase.MainWindow.Connect_Click(Object sender, RoutedEventArgs e) na F:\desenv\fontes -\CopyDatabase\CopyDatabase\MainWindow.xaml.cs:linha 73</LocalizacaoErro>
+      <InnerException>O tempo limite de espera foi atingido</InnerException>
+    </Erro>
+  </Connection>
+  <Connection DataSource=".\sql1" Database="bdsic" UserID="">
+    <Erro DataHora="07/01/2020 16:01:40" Versao="1.0.0.0" EXECompilado="07/01/2020 16:00:48">
+      <Funcao>Void OnError(System.Data.SqlClient.SqlException, Boolean, System.Action`1[System.Action])</Funcao>
+      <MsgErro>Tempo Limite de Execução Expirado.  O período de tempo limite terminou antes da conclusão da operação ou o servidor não está respondendo.</MsgErro>
+      <LocalizacaoErro>   em System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   em System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean&amp; dataReady)
+   em System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   em System.Data.SqlClient.SqlDataReader.get_MetaData()
+   em System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task&amp; task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task&amp; task, Boolean&amp; usedCache, Boolean asyncWrite, Boolean inRetry)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   em System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   em System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   em System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   em System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   em System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   em System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   em System.ConnectionDbAbstract.GetDatatable(SqlCommand command, Boolean executeReader) na f:\Desenvolvimento\Sistemas\desenvolvimento\trunk\SIC\SICCommon\Database\ConnectionDbAbstract.cs:linha 461
+   em System.ConnectionDbAbstract.GetDatatable(SqlCommand command) na f:\Desenvolvimento\Sistemas\desenvolvimento\trunk\SIC\SICCommon\Database\ConnectionDbAbstract.cs:linha 431
+   em System.ConnectionDbAbstract.GetDatatable(String commandText) na f:\Desenvolvimento\Sistemas\desenvolvimento\trunk\SIC\SICCommon\Database\ConnectionDbAbstract.cs:linha 420
+   em System.ConnectionDbAbstract.&lt;GetDataRow&gt;d__0.MoveNext() na f:\Desenvolvimento\Sistemas\desenvolvimento\trunk\SIC\SICCommon\Database\ConnectionDbAbstract.cs:linha 347
+   em System.ConnectionDbAbstract.GetListModel[T](String commandText) na f:\Desenvolvimento\Sistemas\desenvolvimento\trunk\SIC\SICCommon\Database\ConnectionDbAbstract.cs:linha 823
+   em CopyDatabase.PortExport.LoadTables() na F:\desenv\fontes -\CopyDatabase\CopyDatabase\PortExport.cs:linha 289
+   em CopyDatabase.MainWindow.Connect_Click(Object sender, RoutedEventArgs e) na F:\desenv\fontes -\CopyDatabase\CopyDatabase\MainWindow.xaml.cs:linha 73</LocalizacaoErro>
+      <InnerException>O tempo limite de espera foi atingido</InnerException>
+    </Erro>
+  </Connection>
+  <Connection DataSource=".\sql1" Database="bdsic" UserID="">
+    <Erro DataHora="07/01/2020 16:06:06" Versao="1.0.0.0" EXECompilado="07/01/2020 16:00:48">
+      <Funcao>Void OnError(System.Data.SqlClient.SqlException, Boolean, System.Action`1[System.Action])</Funcao>
+      <MsgErro>Tempo Limite de Execução Expirado.  O período de tempo limite terminou antes da conclusão da operação ou o servidor não está respondendo.</MsgErro>
+      <LocalizacaoErro>   em System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   em System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean&amp; dataReady)
+   em System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   em System.Data.SqlClient.SqlDataReader.get_MetaData()
+   em System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task&amp; task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task&amp; task, Boolean&amp; usedCache, Boolean asyncWrite, Boolean inRetry)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   em System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   em System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   em System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   em System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   em System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   em System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   em System.ConnectionDbAbstract.GetDatatable(SqlCommand command, Boolean executeReader) na f:\Desenvolvimento\Sistemas\desenvolvimento\trunk\SIC\SICCommon\Database\ConnectionDbAbstract.cs:linha 461
+   em System.ConnectionDbAbstract.GetDatatable(SqlCommand command) na f:\Desenvolvimento\Sistemas\desenvolvimento\trunk\SIC\SICCommon\Database\ConnectionDbAbstract.cs:linha 431
+   em System.ConnectionDbAbstract.GetDatatable(String commandText) na f:\Desenvolvimento\Sistemas\desenvolvimento\trunk\SIC\SICCommon\Database\ConnectionDbAbstract.cs:linha 420
+   em System.ConnectionDbAbstract.&lt;GetDataRow&gt;d__0.MoveNext() na f:\Desenvolvimento\Sistemas\desenvolvimento\trunk\SIC\SICCommon\Database\ConnectionDbAbstract.cs:linha 347
+   em System.ConnectionDbAbstract.GetListModel[T](String commandText) na f:\Desenvolvimento\Sistemas\desenvolvimento\trunk\SIC\SICCommon\Database\ConnectionDbAbstract.cs:linha 823
+   em CopyDatabase.PortExport.LoadTables() na F:\desenv\fontes -\CopyDatabase\CopyDatabase\PortExport.cs:linha 289
+   em CopyDatabase.MainWindow.Connect_Click(Object sender, RoutedEventArgs e) na F:\desenv\fontes -\CopyDatabase\CopyDatabase\MainWindow.xaml.cs:linha 73</LocalizacaoErro>
+      <InnerException>O tempo limite de espera foi atingido</InnerException>
+    </Erro>
+  </Connection>
+  <Transf TABLE_NAME="Oritens" Row_count="65628">
+    <Erro DataHora="07/01/2020 16:43:16" Versao="1.0.0.0" EXECompilado="07/01/2020 16:00:48">
+      <Funcao>Boolean TryRun(System.Data.SqlClient.RunBehavior, System.Data.SqlClient.SqlCommand, System.Data.SqlClient.SqlDataReader, System.Data.SqlClient.BulkCopySimpleResultSet, System.Data.SqlClient.TdsParserStateObject, Boolean ByRef)</Funcao>
+      <MsgErro>Erro fatal de conexão interna. Estado do erro: 15, Token: 49</MsgErro>
+      <LocalizacaoErro>   em System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean&amp; dataReady)
+   em System.Data.SqlClient.SqlDataReader.TryCloseInternal(Boolean closeReader)
+   em System.Data.SqlClient.SqlDataReader.Close()
+   em System.Data.Common.DbDataReader.Dispose(Boolean disposing)
+   em System.Data.Common.DbDataReader.Dispose()
+   em CopyDatabase.PortExport.TransExec(Table t_executing) na F:\desenv\fontes -\CopyDatabase\CopyDatabase\PortExport.cs:linha 158</LocalizacaoErro>
+      <InnerException>InnerException Null</InnerException>
+    </Erro>
+  </Transf>
+  <Connection DataSource=".\sql1" Database="bdsic" UserID="">
+    <Erro DataHora="07/01/2020 16:49:56" Versao="1.0.0.0" EXECompilado="07/01/2020 16:00:48">
+      <Funcao>Void OnError(System.Data.SqlClient.SqlException, Boolean, System.Action`1[System.Action])</Funcao>
+      <MsgErro>Tempo Limite de Execução Expirado.  O período de tempo limite terminou antes da conclusão da operação ou o servidor não está respondendo.</MsgErro>
+      <LocalizacaoErro>   em System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   em System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean&amp; dataReady)
+   em System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   em System.Data.SqlClient.SqlDataReader.get_MetaData()
+   em System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task&amp; task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task&amp; task, Boolean&amp; usedCache, Boolean asyncWrite, Boolean inRetry)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   em System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   em System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   em System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   em System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   em System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   em System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   em System.ConnectionDbAbstract.GetDatatable(SqlCommand command, Boolean executeReader) na f:\Desenvolvimento\Sistemas\desenvolvimento\trunk\SIC\SICCommon\Database\ConnectionDbAbstract.cs:linha 461
+   em System.ConnectionDbAbstract.GetDatatable(SqlCommand command) na f:\Desenvolvimento\Sistemas\desenvolvimento\trunk\SIC\SICCommon\Database\ConnectionDbAbstract.cs:linha 431
+   em System.ConnectionDbAbstract.GetDatatable(String commandText) na f:\Desenvolvimento\Sistemas\desenvolvimento\trunk\SIC\SICCommon\Database\ConnectionDbAbstract.cs:linha 420
+   em System.ConnectionDbAbstract.&lt;GetDataRow&gt;d__0.MoveNext() na f:\Desenvolvimento\Sistemas\desenvolvimento\trunk\SIC\SICCommon\Database\ConnectionDbAbstract.cs:linha 347
+   em System.ConnectionDbAbstract.GetListModel[T](String commandText) na f:\Desenvolvimento\Sistemas\desenvolvimento\trunk\SIC\SICCommon\Database\ConnectionDbAbstract.cs:linha 823
+   em CopyDatabase.PortExport.LoadTables() na F:\desenv\fontes -\CopyDatabase\CopyDatabase\PortExport.cs:linha 289
+   em CopyDatabase.MainWindow.Connect_Click(Object sender, RoutedEventArgs e) na F:\desenv\fontes -\CopyDatabase\CopyDatabase\MainWindow.xaml.cs:linha 73</LocalizacaoErro>
+      <InnerException>O tempo limite de espera foi atingido</InnerException>
+    </Erro>
+  </Connection>
+  <Transf TABLE_NAME="Oritens" Row_count="65628">
+    <Erro DataHora="07/01/2020 17:25:45" Versao="1.0.0.0" EXECompilado="07/01/2020 16:00:48">
+      <Funcao>Boolean TryRun(System.Data.SqlClient.RunBehavior, System.Data.SqlClient.SqlCommand, System.Data.SqlClient.SqlDataReader, System.Data.SqlClient.BulkCopySimpleResultSet, System.Data.SqlClient.TdsParserStateObject, Boolean ByRef)</Funcao>
+      <MsgErro>Erro fatal de conexão interna. Estado do erro: 15, Token: 49</MsgErro>
+      <LocalizacaoErro>   em System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean&amp; dataReady)
+   em System.Data.SqlClient.SqlDataReader.TryCloseInternal(Boolean closeReader)
+   em System.Data.SqlClient.SqlDataReader.Close()
+   em System.Data.Common.DbDataReader.Dispose(Boolean disposing)
+   em System.Data.Common.DbDataReader.Dispose()
+   em CopyDatabase.PortExport.TransExec(Table t_executing) na F:\desenv\fontes -\CopyDatabase\CopyDatabase\PortExport.cs:linha 158</LocalizacaoErro>
+      <InnerException>InnerException Null</InnerException>
+    </Erro>
+  </Transf>
+</Log>
