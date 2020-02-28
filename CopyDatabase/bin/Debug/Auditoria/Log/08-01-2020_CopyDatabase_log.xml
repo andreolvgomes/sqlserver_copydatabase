@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Log Terminal="PROGRAMACAO1" UserTerminal="André">
+  <Transf TABLE_NAME="Oritens" Row_count="65646">
+    <Erro DataHora="08/01/2020 14:00:33" Versao="1.0.0.0" EXECompilado="07/01/2020 16:00:48">
+      <Funcao>Boolean TryRun(System.Data.SqlClient.RunBehavior, System.Data.SqlClient.SqlCommand, System.Data.SqlClient.SqlDataReader, System.Data.SqlClient.BulkCopySimpleResultSet, System.Data.SqlClient.TdsParserStateObject, Boolean ByRef)</Funcao>
+      <MsgErro>Erro fatal de conexão interna. Estado do erro: 15, Token: 112</MsgErro>
+      <LocalizacaoErro>   em System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean&amp; dataReady)
+   em System.Data.SqlClient.SqlDataReader.TryCloseInternal(Boolean closeReader)
+   em System.Data.SqlClient.SqlDataReader.Close()
+   em System.Data.Common.DbDataReader.Dispose(Boolean disposing)
+   em System.Data.Common.DbDataReader.Dispose()
+   em CopyDatabase.PortExport.TransExec(Table t_executing) na F:\desenv\fontes -\CopyDatabase\CopyDatabase\PortExport.cs:linha 158</LocalizacaoErro>
+      <InnerException>InnerException Null</InnerException>
+    </Erro>
+  </Transf>
+</Log>
