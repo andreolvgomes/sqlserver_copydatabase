@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Windows;
@@ -15,8 +16,8 @@ namespace CopyDatabase
 {
     public class Connections
     {
-        public ConnectionDbAbstract ConnectionTo { get; set; }
-        public ConnectionDbAbstract ConnectionFrom { get; set; }
+        public SqlConnection ConnectionTo { get; set; }
+        public SqlConnection ConnectionFrom { get; set; }
     }
 
     /// <summary>
@@ -24,8 +25,8 @@ namespace CopyDatabase
     /// </summary>
     public partial class SettingConnect : Window
     {
-        private ConnectionDb connect_from = null;
-        private ConnectionDb connect_to = null;
+        private SqlConnection connect_from = null;
+        private SqlConnection connect_to = null;
 
         public SettingConnect(Window owner)
         {
@@ -109,7 +110,7 @@ namespace CopyDatabase
             {
                 sb.Append("integrated security=sspi;");
             }
-            this.connect_to = new ConnectionDb(sb.ToString());
+            this.connect_to = new SqlConnection(sb.ToString());
             this.connect_to.Open();
 
             return true;
@@ -155,7 +156,7 @@ namespace CopyDatabase
             {
                 sb.Append("integrated security=sspi;");
             }
-            this.connect_from = new ConnectionDb(sb.ToString());
+            this.connect_from = new SqlConnection(sb.ToString());
             this.connect_from.Open();
 
             return true;

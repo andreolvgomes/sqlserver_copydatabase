@@ -48,3 +48,23 @@ F:\desenv\fontes -\CopyDatabase\CopyDatabase\obj\Debug\CopyDatabase.csproj.Gener
 F:\desenv\fontes -\CopyDatabase\CopyDatabase\obj\Debug\CopyDatabase.csproj.CopyComplete
 F:\desenv\fontes -\CopyDatabase\CopyDatabase\obj\Debug\CopyDatabase.exe
 F:\desenv\fontes -\CopyDatabase\CopyDatabase\obj\Debug\CopyDatabase.pdb
+C:\sqlserver_copydatabase\CopyDatabase\obj\Debug\CopyDatabase.csproj.AssemblyReference.cache
+C:\sqlserver_copydatabase\CopyDatabase\obj\Debug\MainWindow.baml
+C:\sqlserver_copydatabase\CopyDatabase\obj\Debug\SettingConnect.baml
+C:\sqlserver_copydatabase\CopyDatabase\obj\Debug\App.baml
+C:\sqlserver_copydatabase\CopyDatabase\obj\Debug\MainWindow.g.cs
+C:\sqlserver_copydatabase\CopyDatabase\obj\Debug\SettingConnect.g.cs
+C:\sqlserver_copydatabase\CopyDatabase\obj\Debug\App.g.cs
+C:\sqlserver_copydatabase\CopyDatabase\obj\Debug\CopyDatabase_MarkupCompile.cache
+C:\sqlserver_copydatabase\CopyDatabase\obj\Debug\CopyDatabase.g.resources
+C:\sqlserver_copydatabase\CopyDatabase\obj\Debug\CopyDatabase.Properties.Resources.resources
+C:\sqlserver_copydatabase\CopyDatabase\obj\Debug\CopyDatabase.csproj.GenerateResource.cache
+C:\sqlserver_copydatabase\CopyDatabase\obj\Debug\CopyDatabase.csproj.CoreCompileInputs.cache
+C:\sqlserver_copydatabase\CopyDatabase\obj\Debug\CopyDatabase.exe
+C:\sqlserver_copydatabase\CopyDatabase\obj\Debug\CopyDatabase.pdb
+C:\sqlserver_copydatabase\CopyDatabase\bin\Debug\CopyDatabase.exe.config
+C:\sqlserver_copydatabase\CopyDatabase\bin\Debug\CopyDatabase.exe
+C:\sqlserver_copydatabase\CopyDatabase\bin\Debug\CopyDatabase.pdb
+C:\sqlserver_copydatabase\CopyDatabase\bin\Debug\Dapper.dll
+C:\sqlserver_copydatabase\CopyDatabase\bin\Debug\Dapper.xml
+C:\sqlserver_copydatabase\CopyDatabase\obj\Debug\CopyDatabase.csproj.CopyComplete

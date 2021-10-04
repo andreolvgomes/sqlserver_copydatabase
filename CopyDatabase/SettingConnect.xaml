@@ -8,7 +8,7 @@
         <GroupBox Header="Fonte de dados de ORIGEM" Padding="5">
             <StackPanel>
                 <TextBlock Text="Instância"/>
-                <TextBox x:Name="txtInstancia" Text="(localhost)"/>
+                <TextBox x:Name="txtInstancia" Text=".\SQL2"/>
                 <TextBlock Text="Database"/>
                 <TextBox x:Name="txtDatabase"/>
 
@@ -21,7 +21,7 @@
                         <TextBox x:Name="txtUser" Text="sa"/>
 
                         <TextBlock Text="Password"/>
-                        <PasswordBox x:Name="txtPwd"/>
+                        <PasswordBox x:Name="txtPwd" Password="sic742"/>
                     </StackPanel>
                 </GroupBox>
             </StackPanel>
@@ -29,7 +29,7 @@
         <GroupBox Header="Fonte de dados de DESTINO" Padding="5">
             <StackPanel>
                 <TextBlock Text="Instância"/>
-                <TextBox x:Name="txtInstanciaDest" Text="(localhost)"/>
+                <TextBox x:Name="txtInstanciaDest" Text=".\SQL1"/>
                 <TextBlock Text="Database"/>
                 <TextBox x:Name="txtDatabaseDest"/>
 
@@ -42,7 +42,7 @@
                         <TextBox x:Name="txtUserDest" Text="sa"/>
 
                         <TextBlock Text="PasswordDest"/>
-                        <PasswordBox x:Name="txtPwdDest"/>
+                        <PasswordBox x:Name="txtPwdDest" Password="sic742"/>
                     </StackPanel>
                 </GroupBox>
             </StackPanel>

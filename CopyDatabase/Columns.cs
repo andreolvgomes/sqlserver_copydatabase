@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
+using Dapper;
 
 namespace CopyDatabase
 {
@@ -28,7 +30,7 @@ namespace CopyDatabase
         {
         }
 
-        public static void SetReferences(List<Table> tables, ConnectionDbAbstract connection)
+        public static void SetReferences(List<Table> tables, SqlConnection connection)
         {
             try
             {
@@ -54,9 +56,9 @@ INNER JOIN sys.columns col2
     ON col2.column_id = referenced_column_id AND col2.object_id = tab2.object_id
 where tab1.name = '{0}'", table.TABLE_NAME);
 
-                    foreach (DataRow refer in connection.GetDataRow(commandText))
+                    foreach (var refer in connection.Query(commandText))
                     {
-                        string referenced_table = refer.Get<string>("referenced_table");
+                        string referenced_table = refer.referenced_table;
                         Table tf = tables.FirstOrDefault(c => c.TABLE_NAME.ToUpper() == referenced_table.ToUpper());
 
                         if (tf == null)

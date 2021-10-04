@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
+using Dapper;
 
 namespace CopyDatabase
 {
@@ -20,8 +21,8 @@ namespace CopyDatabase
                 PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        private ConnectionDbAbstract connect_from = null;
-        private ConnectionDbAbstract connect_to = null;
+        private SqlConnection connect_from = null;
+        private SqlConnection connect_to = null;
 
         private Table _Current;
 
@@ -117,16 +118,18 @@ namespace CopyDatabase
 
                 t_executing.Executing = true;
                 if (t_executing.Columns.FirstOrDefault(c => c.IS_AUTOINCREMENT) != null)
-                    this.connect_to.ExecuteNonQuery(string.Format("SET IDENTITY_INSERT dbo.[{0}] ON", t_executing.TABLE_NAME));
-                t_executing.Count = this.connect_from.GetValue<int>(string.Format("select count(1) from dbo.[{0}]", t_executing.TABLE_NAME));
+                    this.connect_to.Execute(string.Format("SET IDENTITY_INSERT dbo.[{0}] ON", t_executing.TABLE_NAME));
+                t_executing.Count = this.connect_from.Query<int>(string.Format("select count(1) from dbo.[{0}]", t_executing.TABLE_NAME)).FirstOrDefault();
 
                 using (SqlCommand command = this.Command(t_executing))
                 {
                     try
                     {
-                        /// faz transferência dos dados
-                        using (SqlCommand command_read = this.connect_from.CreateCommand(string.Format("select top {0} * from dbo.[{1}]", t_executing.Count, t_executing.TABLE_NAME)))
+                        connect_from.OpenIfClosed();
+                        // faz transferência dos dados
+                        using (SqlCommand command_read = this.connect_from.CreateCommand())
                         {
+                            command_read.CommandText = string.Format("select top {0} * from dbo.[{1}]", t_executing.Count, t_executing.TABLE_NAME);
                             using (SqlDataReader reader = command_read.ExecuteReader())
                             {
                                 while (reader.Read())
@@ -183,7 +186,7 @@ namespace CopyDatabase
                 t_executing.IsTrans = true;
                 t_executing.Executing = false;
                 if (t_executing.Columns.FirstOrDefault(c => c.IS_AUTOINCREMENT) != null)
-                    this.connect_to.ExecuteNonQuery(string.Format("SET IDENTITY_INSERT dbo.[{0}] OFF", t_executing.TABLE_NAME));
+                    this.connect_to.Execute(string.Format("SET IDENTITY_INSERT dbo.[{0}] OFF", t_executing.TABLE_NAME));
             }
         }
 
@@ -251,7 +254,41 @@ namespace CopyDatabase
         {
             try
             {
-                this.Tables = this.connect_from.GetListModel<Table>(@"declare @tables table (TABLE_NAME varchar(100) default(''), Row_count bigint default(0));
+                Tables = new List<Table>();
+                var tables = connect_from.Query("select TABLE_NAME from INFORMATION_SCHEMA.TABLES where TABLE_TYPE = 'BASE TABLE' and TABLE_NAME <> 'Libcomsenha'");
+                foreach (var item in tables)
+                {
+                    try
+                    {
+                        var row_count = connect_from.Query<int>($"select count(1) from[{item.TABLE_NAME}]").FirstOrDefault();
+                        if (row_count == 0)
+                            continue;
+
+                        var table = new Table();
+                        table.TABLE_NAME = item.TABLE_NAME;
+                        Tables.Add(table);
+
+                        table.Row_count = row_count;
+                        table.IsChecked = true;
+                        table.PropertyChanged += new PropertyChangedEventHandler(OnTablePropertyChanged);
+                    }
+                    catch (Exception ex)
+                    {
+                        Sistema.Sis.Log.SetException(ex);
+                    }
+                }
+            }
+            catch
+            {
+                throw;
+            }            
+        }
+
+        internal void LoadTables3()
+        {
+            try
+            {
+                this.Tables = this.connect_from.Query<Table>(@"declare @tables table (TABLE_NAME varchar(100) default(''), Row_count bigint default(0));
 declare @TABLE_NAME varchar(100) = '';
 
 declare cursor_foreach cursor for
@@ -276,7 +313,7 @@ open cursor_foreach
 				into @TABLE_NAME
 		end
 exec sp_close_and_deallocate_cursor 'cursor_foreach';
-select * from @tables order by TABLE_NAME");
+select * from @tables order by TABLE_NAME").ToList();
 
                 foreach (Table table in this.Tables)
                 {

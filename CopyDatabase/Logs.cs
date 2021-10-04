@@ -12,7 +12,7 @@ namespace CopyDatabase
         {
             try
             {
-                string path = System.IO.Path.Combine(Sistema.Sis.CurrentDirectory);
+                string path = System.IO.Path.Combine(Environment.CurrentDirectory);
                 if (!System.IO.Directory.Exists(path)) System.IO.Directory.CreateDirectory(path);
                 path = System.IO.Path.Combine(path, "success.txt");
 

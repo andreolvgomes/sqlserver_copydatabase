@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
-using System.Text;
+using Dapper;
 
 namespace CopyDatabase
 {
@@ -16,19 +17,19 @@ namespace CopyDatabase
         /// <summary>
         /// Conexão com o db Cliente
         /// </summary>
-        private ConnectionDbAbstract connection_to = null;
+        private SqlConnection connection_to = null;
 
         /// <summary>
         /// Conexão com o db Servidor
         /// </summary>
-        private ConnectionDbAbstract connection_from = null;
+        private SqlConnection connection_from = null;
 
         /// <summary>
         /// Construtor
         /// </summary>
         /// <param name="connection_to">Conexão com o db Cliente</param>
         /// <param name="connection_from">Conexão com o db Servidor</param>
-        public LoadColumns(ConnectionDbAbstract connection_to, ConnectionDbAbstract connection_from)
+        public LoadColumns(SqlConnection connection_to, SqlConnection connection_from)
         {
             this.connection_to = connection_to;
             this.connection_from = connection_from;
@@ -62,8 +63,8 @@ LEFT JOIN INFORMATION_SCHEMA.TABLE_CONSTRAINTS tc on kcu.CONSTRAINT_NAME = tc.CO
 WHERE c.TABLE_NAME = '{0}' and DATA_TYPE <> 'TIMESTAMP') AS r
 ORDER BY r.ORDINAL_POSITION", table);
 
-                List<Columns> columns_to = this.connection_to.GetListModel<Columns>(commandTextColumns);
-                List<Columns> columns_from = this.connection_from.GetListModel<Columns>(commandTextColumns);
+                List<Columns> columns_to = this.connection_to.Query<Columns>(commandTextColumns).ToList();
+                List<Columns> columns_from = this.connection_from.Query<Columns>(commandTextColumns).ToList();
 
                 /// retorna somente as colunas que existem no svr e no cli, caso exista alguma
                 /// outra coluna em um dos lados, então estas poderão ser ignoradas, senão causará erros
@@ -105,10 +106,10 @@ ORDER BY r.ORDINAL_POSITION", table);
         {
             string sql = "select COLUMN_NAME, TABLE_NAME from INFORMATION_SCHEMA.COLUMNS where TABLE_SCHEMA = 'dbo' and COLUMNPROPERTY(object_id(TABLE_NAME), COLUMN_NAME, 'IsIdentity') = 1 order by TABLE_NAME";
             Dictionary<string, bool> dic = new Dictionary<string, bool>();
-            var dt = connection_to.GetDatatable(sql);
-            foreach (DataRow dr in dt.Rows)
+            var dt = connection_to.Query(sql);
+            foreach (var dr in dt)
             {
-                dic[(dr["TABLE_NAME"].ToString() + dr["COLUMN_NAME"].ToString()).ToUpperInvariant()] = true;
+                dic[(dr.TABLE_NAME + dr.COLUMN_NAME).ToUpperInvariant()] = true;
             }
             return dic;
         }
@@ -127,10 +128,10 @@ ORDER BY r.ORDINAL_POSITION", table);
                             AND INFORMATION_SCHEMA.CONSTRAINT_COLUMN_USAGE.Table_Name = INFORMATION_SCHEMA.TABLE_CONSTRAINTS.Table_Name
                             AND Constraint_Type = 'PRIMARY KEY'";
             Dictionary<string, bool> dic = new Dictionary<string, bool>();
-            var dt = connection_to.GetDatatable(sql);
-            foreach (DataRow dr in dt.Rows)
+            var dt = connection_to.Query(sql);
+            foreach (var dr in dt)
             {
-                dic[(dr["TABLE_NAME"].ToString() + dr["COLUMN_NAME"].ToString()).ToUpperInvariant()] = true;
+                dic[(dr.TABLE_NAME + dr.COLUMN_NAME).ToUpperInvariant()] = true;
             }
             return dic;
         }

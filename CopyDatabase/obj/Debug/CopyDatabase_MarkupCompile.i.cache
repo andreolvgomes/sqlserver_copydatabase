@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-F:\desenv\fontes -\CopyDatabase\CopyDatabase\obj\Debug\
+C:\sqlserver_copydatabase\CopyDatabase\obj\Debug\
 CopyDatabase
 none
 false
 DEBUG;TRACE
-F:\desenv\fontes -\CopyDatabase\CopyDatabase\App.xaml
+C:\sqlserver_copydatabase\CopyDatabase\App.xaml
 2813833759
 
-12-1958225130
-14-1006967979
+16-796254261
+15418008633
 MainWindow.xaml;SettingConnect.xaml;
 
 False
