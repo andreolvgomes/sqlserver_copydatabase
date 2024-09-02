@@ -139,6 +139,8 @@ namespace CopyDatabase
                                     {
                                         if (column.DATA_TYPE.Equals("image"))
                                             command.Parameters.Add(new SqlParameter() { ParameterName = string.Format("@{0}", column.COLUMN_NAME.Replace(" ", "_").Replace("~", "_")), SqlDbType = SqlDbType.Image, Value = reader[column.COLUMN_NAME] });// .AddWithValue(string.Format("@{0}", column.COLUMN_NAME.Replace(" ", "_").Replace("~", "_")), reader[column.COLUMN_NAME]);
+                                        else if (column.DATA_TYPE.Equals("varbinary"))
+                                            command.Parameters.Add(new SqlParameter() { ParameterName = string.Format("@{0}", column.COLUMN_NAME.Replace(" ", "_").Replace("~", "_")), SqlDbType = SqlDbType.VarBinary, Value = reader[column.COLUMN_NAME] });// .AddWithValue(string.Format("@{0}", column.COLUMN_NAME.Replace(" ", "_").Replace("~", "_")), reader[column.COLUMN_NAME]);
                                         else
                                             command.Parameters.AddWithValue(string.Format("@{0}", column.COLUMN_NAME.Replace(" ", "_").Replace("~", "_")), reader[column.COLUMN_NAME]);
                                     }
@@ -254,21 +256,21 @@ namespace CopyDatabase
         {
             try
             {
-                Tables = new List<Table>();
-                var tables = connect_from.Query("select TABLE_NAME from INFORMATION_SCHEMA.TABLES where TABLE_TYPE = 'BASE TABLE' and TABLE_NAME <> 'Libcomsenha'");
-                foreach (var item in tables)
+                var query = @"select
+o.name as TABLE_NAME,
+ddps.row_count as Row_count
+from sys.indexes as i
+  inner join sys.objects as o on i.OBJECT_ID = o.OBJECT_ID
+  inner join sys.dm_db_partition_stats as ddps on i.OBJECT_ID = ddps.OBJECT_ID and i.index_id = ddps.index_id 
+where i.index_id < 2  AND o.is_ms_shipped = 0 and (o.name not like 'RC%' and o.name not like 'R0%' and o.name not like 'R0%') and ddps.row_count > 0
+order by o.name";
+
+                //var tables = connect_from.Query("select TABLE_NAME from INFORMATION_SCHEMA.TABLES where TABLE_TYPE = 'BASE TABLE' and TABLE_NAME <> 'Libcomsenha' order by TABLE_NAME");
+                Tables = connect_from.Query<Table>(query).ToList();
+                foreach (var table in Tables)
                 {
                     try
                     {
-                        var row_count = connect_from.Query<int>($"select count(1) from[{item.TABLE_NAME}]").FirstOrDefault();
-                        if (row_count == 0)
-                            continue;
-
-                        var table = new Table();
-                        table.TABLE_NAME = item.TABLE_NAME;
-                        Tables.Add(table);
-
-                        table.Row_count = row_count;
                         table.IsChecked = true;
                         table.PropertyChanged += new PropertyChangedEventHandler(OnTablePropertyChanged);
                     }
@@ -276,49 +278,6 @@ namespace CopyDatabase
                     {
                         Sistema.Sis.Log.SetException(ex);
                     }
-                }
-            }
-            catch
-            {
-                throw;
-            }            
-        }
-
-        internal void LoadTables3()
-        {
-            try
-            {
-                this.Tables = this.connect_from.Query<Table>(@"declare @tables table (TABLE_NAME varchar(100) default(''), Row_count bigint default(0));
-declare @TABLE_NAME varchar(100) = '';
-
-declare cursor_foreach cursor for
-
-(select TABLE_NAME from INFORMATION_SCHEMA.TABLES where TABLE_TYPE = 'BASE TABLE' and TABLE_NAME <> 'Libcomsenha')
-open cursor_foreach
-	fetch next from cursor_foreach
-		into @TABLE_NAME
-
-		while (@@FETCH_STATUS = 0)
-		begin
-			declare @result table (ID int identity(1, 1), row_count bigint);
-			insert into @result (row_count)
-			exec (N'select count(1) from [' + @TABLE_NAME + ']');
-
-			declare @rowcount bigint = (select top (1) row_count from @result order by ID desc);
-			
-			if (@rowcount > 0)
-				insert into @tables (TABLE_NAME, row_count) values(@TABLE_NAME, @rowcount);
-
-			fetch next from cursor_foreach
-				into @TABLE_NAME
-		end
-exec sp_close_and_deallocate_cursor 'cursor_foreach';
-select * from @tables order by TABLE_NAME").ToList();
-
-                foreach (Table table in this.Tables)
-                {
-                    table.IsChecked = true;
-                    table.PropertyChanged += new PropertyChangedEventHandler(OnTablePropertyChanged);
                 }
             }
             catch
